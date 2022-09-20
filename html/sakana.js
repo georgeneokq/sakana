@@ -3,6 +3,10 @@
  * Date: 2022-08-28
  * Author: itorr <https://github.com/itorr>
  * Repository: https://github.com/itorr/sakana
+ * 
+ * Modified by georgeneokq
+ * Changes:
+ * playVoice function plays the character's voice without any checks on the character position
  */
 const Sakana = (_=>{
     /* css */
@@ -413,8 +417,9 @@ const Sakana = (_=>{
             if (character === 'chisato') {
                 if (
                     // 'nice chin~a~na~go~' 经验值
-                    Math.abs(v.r) <= 4
-                    && Math.abs(v.y) >= 20
+                    // Math.abs(v.r) <= 4
+                    // && Math.abs(v.y) >= 20
+                    true
                 ) {
                     log('%cchin~a~na~go~',chisatoConsoleStyle);
                     Voices.chisato.play();
@@ -422,8 +427,9 @@ const Sakana = (_=>{
             } else {
                 if (
                     // 'nice sakana~' 经验值
-                    v.r >= Characters.takina.r
-                    && (Math.abs(v.y) <= 12 || v.r >= 3 * Math.abs(v.y))
+                    // v.r >= Characters.takina.r
+                    // && (Math.abs(v.y) <= 12 || v.r >= 3 * Math.abs(v.y))
+                    true
                 ) {
                     log('%csakana~',takinaConsoleStyle);
                     Voices.takina.play();
